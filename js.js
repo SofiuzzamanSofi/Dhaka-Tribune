@@ -156,12 +156,6 @@ const displayMOdal = (modals) => {
 
 }
 
-
-// function 01 call 
-autoLoadCatagory();
-// showNewsCardFunction(8);
-
-
 // blog eventhandeler 
 document.getElementById('blog').addEventListener('click', function () {
     // const blogggg = document.getElementById('blog-er-kaj');
@@ -232,3 +226,7 @@ document.getElementById('blog').addEventListener('click', function () {
     cardShowContainer.appendChild(div)
 
 })
+
+// function 01 call 
+autoLoadCatagory();
+showNewsCardFunction(8);
