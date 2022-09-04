@@ -1,5 +1,5 @@
 
-// first function before catagory 
+// 01 first function before catagory 
 const autoLoadCatagory = async () => {
 
     // try catch 
@@ -7,6 +7,7 @@ const autoLoadCatagory = async () => {
         const url = `https://openapi.programming-hero.com/api/news/categories`;
         const res = await fetch(url);
         const data = await res.json();
+        console.log(data.data.news_category[0].category_name)
         displayNewsCatagory(data.data.news_category);
     }
     catch (error) {
@@ -14,7 +15,7 @@ const autoLoadCatagory = async () => {
     }
 };
 
-// displayNewsCatagory d-flex function 
+// 02 displayNewsCatagory d-flex function 
 const displayNewsCatagory = (newss) => {
 
     const newsCatagory = document.getElementById('news-catagory');
@@ -24,11 +25,11 @@ const displayNewsCatagory = (newss) => {
         div.innerHTML = `
         <div onclick="showNewsCardFunction(${news.category_id})" class="py-2"> ${news.category_name}</div>
         `;
-        newsCatagory.appendChild(div)
+        newsCatagory.appendChild(div);
     })
 };
 
-// card function 
+// card function 03
 const showNewsCardFunction = async (id) => {
 
     // spinner start 
@@ -42,7 +43,7 @@ const showNewsCardFunction = async (id) => {
 
 // card function inner div append
 const displayShowNewsCardFunction = (datas) => {
-    // if no data in catagory alert no data 
+    // // if no data in catagory alert no data 
     if (datas.length === 0) {
         // spinner end 
         spinnerFunction(false);
@@ -53,8 +54,11 @@ const displayShowNewsCardFunction = (datas) => {
 
     }
 
-    // items function e data pathano 
-    itemfoundFunction(datas)
+    // items function e data pathano
+    const itemNumber = document.getElementById('item-number');
+    itemNumber.innerText = datas.length;
+    // const catagoryName = document.getElementById('catagory-name');
+    // catagoryName.innerText = (news.category_name);
 
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
@@ -150,21 +154,13 @@ const displayMOdal = (modals) => {
 
 }
 
+
+// function 01 call 
 autoLoadCatagory();
 showNewsCardFunction(8);
 
 
-// items functions 
-const itemfoundFunction = (items) => {
-    console.log(items);
-    const itemmm = document.getElementById('item-found');
-    itemmm.textContent = '';
-    const div = document.createElement('div');
-    div.innerHTML = `
-    <div>${items.length} items found for category ${items.name} .</div>
-    `;
-    itemmm.appendChild(div);
-};
+
 
 
 // const itemFound = document.getElementById('item-found');
