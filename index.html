@@ -82,8 +82,38 @@
 
         <!-- shorting  -->
         <main>
-            <div class="p-3 border rounded my-2 bg-secondary bg-opacity-25">
-                <div> items found for category </div>
+            <!-- items number  -->
+            <div>
+                <div id="item-found" class="p-3 border rounded my-2 bg-secondary bg-opacity-25">
+                    <div>items found for category</div>
+                </div>
+            </div>
+
+            <!-- todayt short  -->
+            <div>
+                <div class="d-flex align-items-center justify-content-between p-3 my-4">
+                    <div class="d-flex align-items-center justify-content-between gap-2">
+                        <div>
+                            Sort By View:
+                        </div>
+                        <div class="dropdown">
+                            <a class="btn btn-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Default
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Name</a></li>
+                                <li><a class="dropdown-item" href="#">Assending</a></li>
+                                <li><a class="dropdown-item" href="#">Dessending</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn bg-primary">Today's Pic</button>
+                        <button class="btn bg-danger bg-opacity-50">Trending</button>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -121,66 +151,6 @@
         <main>
             <div>
                 <div id="card-show-container" class="card mb-3 w-auto">
-
-
-                    <!-- <div class="row g-0 border m-1 p-1">
-                        <div class="col-md-4">
-                            <img src="${data.image_url}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${data.title}</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to
-                                    additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                <div>
-                                    <div class="d-flex align-items-center justify-content-between gap-4">
-                                        <div class="d-flex align-items-center justify-content-between gap-2">
-                                            <div class="">
-                                                <img style=" height: 44px"
-                                                    class="img-fluid   rounded-circle border border-danger border-3 text-end"
-                                                    src="img/my pic icon.jpg" alt="">
-                                            </div>
-                                            <div class="">
-                                                <div class=" m-0 p-0"><small id="author">author</small></div>
-                                                <div class=" m-0 p-0"><small id="public-date">author</small></div>
-                                            </div>
-                                        </div>
-
-                                        <div class=" ">
-                                            <i class="fa-regular fa-eye"></i> <span id=" viesw"> </span> <span> M
-                                            </span>
-                                        </div>
-                                        <div class=" ">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-regular fa-star-half-stroke"></i>
-                                            <i class="fa-regular fa-star"></i>
-                                            <i class="fa-regular fa-star"></i>
-                                            <i class="fa-regular fa-star"></i>
-                                        </div>
-                                        <div><i class="fa-solid fa-arrow-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
-                    <!-- <div class="row g-0 border m-1 p-1">
-                        <div class="col-md-4">
-                            <img src="${data.image_url}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${data.title}</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to
-                                    additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div> -->
 
                 </div>
             </div>

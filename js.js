@@ -127,7 +127,8 @@ const modalOpenfunction = async (bigId) => {
 
 // modal function fetch  er por display kora
 const displayMOdal = (modals) => {
-    console.log(modals);
+    console.log(modals.author.name);
+    console.log(modals.author.published_date);
 
     const modalTitle = document.getElementById('newsModalLabel');
     modalTitle.innerText = modals.title;
@@ -136,9 +137,8 @@ const displayMOdal = (modals) => {
     <div class="m-2 p-2">
         <p class="center-texxxxt">${modals.details}</p>
         <hr>
-        <div class="d-flex align-items-center justify-content-between gap-4">
-            <div class=" m-0 p-0"><small id="author">${modals.author.name === 'system' || modals.author.name === null ? "No author found" : data.author.name} </small></div>
-            <div class=" m-0 p-0"><small id="public-date">${modals.author.published_date === null ? "No date found" : modals.author.published_date}</small></div>
+        <div class="d-flex align-items-center justify-content-between">
+           
         </div>
     </div>
     
@@ -147,3 +147,14 @@ const displayMOdal = (modals) => {
 
 autoLoadCatagory();
 showNewsCardFunction(8);
+
+// const itemfoundFunction = async () => {
+//     const itemmm = await document.getElementById('items-found');
+//     console.log(itemmm);
+//     console.log(09);
+// };
+// itemfoundFunction();
+
+
+// const itemFound = document.getElementById('item-found');
+// console.log(itemFound);
