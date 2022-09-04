@@ -20,23 +20,14 @@ const displayNewsCatagory = (newss) => {
         newsCatagory.appendChild(div)
     })
 }
+
 const showNewsCardFunction = async (id) => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+    const url = `https://openapi.programming-hero.com/api/news/category/0${id}`;
     const res = await fetch(url);
     const data = await res.json();
     console.log(data);
-    // displayNewsCatagory(data.data.news_category);
-    console.log(id)
 }
+
 autoLoadCatagory();
 
 
-const showNewsCardFunction2 = async (id) => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
-    // displayNewsCatagory(data.data.news_category);
-    console.log(id)
-};
-showNewsCardFunction2(2);
