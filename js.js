@@ -52,6 +52,10 @@ const displayShowNewsCardFunction = (datas) => {
     else {
 
     }
+
+    // items function e data pathano 
+    itemfoundFunction(datas)
+
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
     datas.forEach(data => {
@@ -149,12 +153,18 @@ const displayMOdal = (modals) => {
 autoLoadCatagory();
 showNewsCardFunction(8);
 
-// const itemfoundFunction = async () => {
-//     const itemmm = await document.getElementById('items-found');
-//     console.log(itemmm);
-//     console.log(09);
-// };
-// itemfoundFunction();
+
+// items functions 
+const itemfoundFunction = (items) => {
+    console.log(items);
+    const itemmm = document.getElementById('item-found');
+    itemmm.textContent = '';
+    const div = document.createElement('div');
+    div.innerHTML = `
+    <div>${items.length} items found for category ${items.name} .</div>
+    `;
+    itemmm.appendChild(div);
+};
 
 
 // const itemFound = document.getElementById('item-found');
