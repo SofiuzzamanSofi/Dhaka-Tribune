@@ -7,7 +7,7 @@ const autoLoadCatagory = async () => {
         const url = `https://openapi.programming-hero.com/api/news/categories`;
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.data.news_category[0].category_name)
+        // console.log(data.data.news_category[0].category_name)
         displayNewsCatagory(data.data.news_category);
     }
     catch (error) {
@@ -159,11 +159,76 @@ const displayMOdal = (modals) => {
 
 // function 01 call 
 autoLoadCatagory();
-showNewsCardFunction(8);
+// showNewsCardFunction(8);
 
 
+// blog eventhandeler 
+document.getElementById('blog').addEventListener('click', function () {
+    // const blogggg = document.getElementById('blog-er-kaj');
+    // blogggg.classList.remove('d-none')
+    const cardShowContainer = document.getElementById('card-show-container');
+    cardShowContainer.textContent = '';
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <div id="blog-er-kaj">
+        <div>
+            <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+                <h2>Difference between var let const</h2>
+                <p>The differences between var, let, and const variable declaration in JavaScript include:
+                    Variables declared with var and const are scoped to the immediate function body.
+                    Variables declared with the var keyword are hoisted. Hoisting means that the variable can be
+                    accessed in
+                    their enclosing scope even before they are declared.
+                    Variables declared with the let keyword are block-scoped, which means the variables will have
+                    scope
+                    to
+                    the immediate enclosing block.</p>
+            </div>
+        </div>
+        <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+            <h2>Difference between Arrow Function and Regular Function </h2>
+            <p>1. Regular function
+                Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.
 
+                The dynamic context means that the value of this depends on how the function is invoked. In
+                JavaScript,
+                there are 4 ways you can invoke a regular function.
+                <br>
+                2. The behavior of this inside of an arrow function differs considerably from the regular function's
+                this
+                behavior. The arrow function doesn't define its own execution context.
 
+                No matter how or where being executed, this value inside of an arrow function always equals this
+                value
+                from
+                the outer function. In other words, the arrow function resolves this lexically.
+            </p>
+        </div>
+        <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+            <h2>Why we use templete string.</h2>
+            <p>Template literals are sometimes informally called template strings, because they are used most
+                commonly
+                for
+                string interpolation (to create strings by doing substitution of placeholders). However, a tagged
+                template
+                literal may not result in a string; it can be used with a custom tag function to perform whatever
+                operations
+                you want on the different parts of the template literal.
+            </p>
+        </div>
+        <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+            <h2>Difference between map for each filter find.</h2>
+            <p>The main difference between forEach and filter is that forEach just loop over the array and executes
+                the
+                callback but filter executes the callback and check its return value. If the value is true element
+                remains
+                in the resulting array but if the return value is false the element will be removed for the
+                resulting
+                array.
+            </p>
+        </div>
+    </div>
+                     `;
+    cardShowContainer.appendChild(div)
 
-// const itemFound = document.getElementById('item-found');
-// console.log(itemFound);
+})

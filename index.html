@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <section class="container">
+    <section class="container bg-light bg-opacity-25">
         <!-- header  -->
         <header>
             <nav class="navbar navbar-expand-lg bg-light">
@@ -60,7 +60,7 @@
                         </ul>
                         <div class="d-flex align-items-center justify-content-end gap-4">
                             <div class=" ">News</div>
-                            <div class=" ">Blog</div>
+                            <div id="blog" class=" ">Blog</div>
                             <img style=" height: 50px"
                                 class="img-fluid  rounded-circle border border-danger border-3 text-end"
                                 src="img/my pic icon.jpg" alt="">
@@ -84,7 +84,7 @@
         <main>
             <!-- items number  -->
             <div>
-                <div id="item-found" class="p-3 border rounded my-2 bg-secondary bg-opacity-25">
+                <div id="item-found" class="p-3 border rounded my-2 bg-light bg-opacity-100">
                     <div><span id="item-number"></span> items found for category <span id="catagory-name"></span> .
                     </div>
                 </div>
@@ -172,6 +172,67 @@
             </div>
         </section>
 
+        <!-- blog sec tion  -->
+        <div id="blog-er-kaj" class="d-none">
+            <div>
+                <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+                    <h2>Difference between var let const</h2>
+                    <p>The differences between var, let, and const variable declaration in JavaScript include:
+                        Variables declared with var and const are scoped to the immediate function body.
+                        Variables declared with the var keyword are hoisted. Hoisting means that the variable can be
+                        accessed in
+                        their enclosing scope even before they are declared.
+                        Variables declared with the let keyword are block-scoped, which means the variables will have
+                        scope
+                        to
+                        the immediate enclosing block.</p>
+                </div>
+            </div>
+            <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+                <h2>Difference between Arrow Function and Regular Function </h2>
+                <p>1. Regular function
+                    Inside of a regular JavaScript function, this value (aka the execution context) is dynamic.
+
+                    The dynamic context means that the value of this depends on how the function is invoked. In
+                    JavaScript,
+                    there are 4 ways you can invoke a regular function.
+                    <br>
+                    2. The behavior of this inside of an arrow function differs considerably from the regular function's
+                    this
+                    behavior. The arrow function doesn't define its own execution context.
+
+                    No matter how or where being executed, this value inside of an arrow function always equals this
+                    value
+                    from
+                    the outer function. In other words, the arrow function resolves this lexically.
+                </p>
+            </div>
+            <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+                <h2>Why we use templete string.</h2>
+                <p>Template literals are sometimes informally called template strings, because they are used most
+                    commonly
+                    for
+                    string interpolation (to create strings by doing substitution of placeholders). However, a tagged
+                    template
+                    literal may not result in a string; it can be used with a custom tag function to perform whatever
+                    operations
+                    you want on the different parts of the template literal.
+                </p>
+            </div>
+            <div class="border text-center m-2 p-3 bg-danger bg-opacity-25">
+                <h2>Difference between map for each filter find.</h2>
+                <p>The main difference between forEach and filter is that forEach just loop over the array and executes
+                    the
+                    callback but filter executes the callback and check its return value. If the value is true element
+                    remains
+                    in the resulting array but if the return value is false the element will be removed for the
+                    resulting
+                    array.
+                </p>
+            </div>
+        </div>
+
+
     </section>
 
     <!-- footer  -->
@@ -188,6 +249,7 @@
 
     <!-- java script  -->
     <script src="js.js"></script>
+
 </body>
 
 
