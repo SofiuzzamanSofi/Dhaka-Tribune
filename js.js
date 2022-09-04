@@ -32,6 +32,7 @@ const displayNewsCatagory = (newss) => {
 // card function 03
 const showNewsCardFunction = async (id) => {
 
+
     // spinner start 
     spinnerFunction(true);
 
@@ -57,8 +58,9 @@ const displayShowNewsCardFunction = (datas) => {
     // items function e data pathano
     const itemNumber = document.getElementById('item-number');
     itemNumber.innerText = datas.length;
+    // items function e name pathano
     // const catagoryName = document.getElementById('catagory-name');
-    // catagoryName.innerText = (news.category_name);
+    // catagoryName.innerText = (newss.category_name);
 
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
