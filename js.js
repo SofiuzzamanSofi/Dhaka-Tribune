@@ -51,16 +51,16 @@ const displayShowNewsCardFunction = (datas) => {
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
     datas.forEach(data => {
-        // console.log(data);
+        const dataId = (data._id);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="row g-0 border m-1 p-1" onclick="modalOpenfunction()">
-                        <div class="col-md-4">
+                    <div onclick="modalOpenfunction('${dataId}')" class="row g-0 border m-1 p-1" >
+                        <div class="col-md-4" data-bs-toggle="modal" data-bs-target="#newsModal">
                             <img  src="${data.image_url}" class="img-fluid rounded" alt="...">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">${data.title}</h5>
+                            <div class="card-body" >
+                                <h5 class="card-title" data-bs-toggle="modal" data-bs-target="#newsModal">${data.title} </h5>
                                 <p class="card-text text-truncate">${data.details}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 <div>
@@ -94,7 +94,7 @@ const displayShowNewsCardFunction = (datas) => {
                             </div>
                         </div>
                     </div>
-        `;
+                     `;
         cardShowContainer.appendChild(div)
     })
 
@@ -111,7 +111,31 @@ const spinnerFunction = isLoading => {
     else {
         spinnerDiv.classList.add('d-none')
     }
-
 }
+
+// modal function fetch 
+const modalOpenfunction = async (bigId) => {
+    const url = `https://openapi.programming-hero.com/api/news/${bigId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayMOdal(data.data[0]);
+}
+
+// modal function fetch  er por display kora
+const displayMOdal = (modals) => {
+
+    console.log(modals);
+
+    const modalTitle = document.getElementById('newsModalLabel');
+    modalTitle.innerText = modals.title;
+    const modalParagraph = document.getElementById('news-bodyy');
+    modalParagraph.innerHTML = `
+    <div class="m-2 p-2">
+    <p class="text-justify">${modals.details}</p>
+    </div>
+    
+    `;
+}
+
 autoLoadCatagory();
 showNewsCardFunction(8);
