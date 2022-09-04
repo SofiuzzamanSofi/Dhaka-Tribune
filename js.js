@@ -138,11 +138,12 @@ const displayMOdal = (modals) => {
         <p class="center-texxxxt">${modals.details}</p>
         <hr>
         <div class="d-flex align-items-center justify-content-between">
-           
+        <div class=" m-0 p-0"><small id="author">${modals.author.name} </small></div>
+        <div class=" m-0 p-0"><small id="public-date">${modals.author.published_date === null ? "No date found" : modals.author.published_date}</small></div>
         </div>
     </div>
-    
     `;
+
 }
 
 autoLoadCatagory();
