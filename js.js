@@ -131,7 +131,7 @@ const displayMOdal = (modals) => {
     const modalParagraph = document.getElementById('news-bodyy');
     modalParagraph.innerHTML = `
     <div class="m-2 p-2">
-    <p class="text-justify">${modals.details}</p>
+    <p class="center-texxxxt">${modals.details}</p>
     </div>
     
     `;
