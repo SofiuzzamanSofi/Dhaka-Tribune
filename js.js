@@ -4,7 +4,6 @@ const autoLoadCatagory = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
     const res = await fetch(url);
     const data = await res.json();
-    // console.log(data.data);
     displayNewsCatagory(data.data.news_category);
 };
 
@@ -29,11 +28,18 @@ const showNewsCardFunction = async (id) => {
 };
 
 const displayShowNewsCardFunction = (datas) => {
+    console.log(datas);
+    if (datas.length === 0) {
+        alert('Sorry no news found, Pls try others catagory.')
+        return;
+    }
+    else {
 
+    }
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
     datas.forEach(data => {
-        console.log(data);
+        // console.log(data);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="row g-0 border m-1">
@@ -57,3 +63,4 @@ const displayShowNewsCardFunction = (datas) => {
 };
 
 autoLoadCatagory();
+showNewsCardFunction(8);
