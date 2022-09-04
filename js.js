@@ -1,15 +1,22 @@
 
 // first function before catagory 
 const autoLoadCatagory = async () => {
-    const url = `https://openapi.programming-hero.com/api/news/categories`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayNewsCatagory(data.data.news_category);
+
+    // try catch 
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/categories`;
+        const res = await fetch(url);
+        const data = await res.json();
+        displayNewsCatagory(data.data.news_category);
+    }
+    catch (error) {
+        console.log(error)
+    }
 };
 
 // displayNewsCatagory d-flex function 
 const displayNewsCatagory = (newss) => {
-    console.log(newss);
+
     const newsCatagory = document.getElementById('news-catagory');
     newss.forEach(news => {
         // console.log(news.category_name);
@@ -35,8 +42,6 @@ const showNewsCardFunction = async (id) => {
 
 // card function inner div append
 const displayShowNewsCardFunction = (datas) => {
-    console.log(datas);
-
     // if no data in catagory alert no data 
     if (datas.length === 0) {
         // spinner end 
@@ -47,7 +52,6 @@ const displayShowNewsCardFunction = (datas) => {
     else {
 
     }
-
     const cardShowContainer = document.getElementById('card-show-container');
     cardShowContainer.textContent = '';
     datas.forEach(data => {
@@ -72,8 +76,8 @@ const displayShowNewsCardFunction = (datas) => {
                                                     src="${data.author.img}" alt="">
                                             </div>
                                             <div class="">
-                                                <div class=" m-0 p-0"><small id="author">${data.author.name}</small></div>
-                                                <div class=" m-0 p-0"><small id="public-date">${data.author.published_date}</small></div>
+                                                <div class=" m-0 p-0"><small id="author">${data.author.name === 'system' || data.author.name === null ? "No author found" : data.author.name} </small></div>
+                                                <div class=" m-0 p-0"><small id="public-date">${data.author.published_date === null ? "No date found" : data.author.published_date}</small></div>
                                             </div>
                                         </div>
 
@@ -123,7 +127,6 @@ const modalOpenfunction = async (bigId) => {
 
 // modal function fetch  er por display kora
 const displayMOdal = (modals) => {
-
     console.log(modals);
 
     const modalTitle = document.getElementById('newsModalLabel');
@@ -131,7 +134,12 @@ const displayMOdal = (modals) => {
     const modalParagraph = document.getElementById('news-bodyy');
     modalParagraph.innerHTML = `
     <div class="m-2 p-2">
-    <p class="center-texxxxt">${modals.details}</p>
+        <p class="center-texxxxt">${modals.details}</p>
+        <hr>
+        <div class="d-flex align-items-center justify-content-between gap-4">
+            <div class=" m-0 p-0"><small id="author">${modals.author.name === 'system' || modals.author.name === null ? "No author found" : data.author.name} </small></div>
+            <div class=" m-0 p-0"><small id="public-date">${modals.author.published_date === null ? "No date found" : modals.author.published_date}</small></div>
+        </div>
     </div>
     
     `;
