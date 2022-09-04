@@ -15,7 +15,7 @@ const displayNewsCatagory = (newss) => {
         // console.log(news.category_name);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div onclick="showNewsCardFunction(${news.category_id})"> ${news.category_name}</div>
+        <div onclick="showNewsCardFunction(${news.category_id})" class="py-2"> ${news.category_name}</div>
         `;
         newsCatagory.appendChild(div)
     })
@@ -54,14 +54,14 @@ const displayShowNewsCardFunction = (datas) => {
         // console.log(data);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="row g-0 border m-1 p-1">
+        <div class="row g-0 border m-1 p-1" onclick="modalOpenfunction()">
                         <div class="col-md-4">
                             <img  src="${data.image_url}" class="img-fluid rounded" alt="...">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">${data.title}</h5>
-                                <p class="card-text">${data.details}</p>
+                                <p class="card-text text-truncate">${data.details}</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                                 <div>
                                     <div class="d-flex align-items-center justify-content-between gap-4">
@@ -78,7 +78,7 @@ const displayShowNewsCardFunction = (datas) => {
                                         </div>
 
                                         <div class=" ">
-                                            <i class="fa-regular fa-eye"></i> <span id=" viesw"> </span> ${data.total_view} <span> M
+                                            <i class="fa-regular fa-eye"></i> <span id=" viesw"> </span> ${data.total_view / 10} <span> M
                                             </span>
                                         </div>
                                         <div class=" ">
